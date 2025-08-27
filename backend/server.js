@@ -11,7 +11,7 @@ const app = express();
 // ✅ Allow frontend on Vercel
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://vehicle-taxation.vercel.app" // <-- Replace with final domain
+  "https://diason-vehicle-tax-app.vercel.app/" // <-- Replace with final domain
 ];
 
 app.use(

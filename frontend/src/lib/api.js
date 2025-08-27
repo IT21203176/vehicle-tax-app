@@ -1,14 +1,14 @@
 import axios from "axios";
 
-// ✅ Dynamically pick API base URL
+// ✅ Dynamically pick API base URL (no /api at the end)
 const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 const api = axios.create({
-  baseURL: `${API_BASE_URL}/api`,
+  baseURL: `${API_BASE_URL}/api`, // append /api here
   headers: {
     "Content-Type": "application/json",
   },
-  withCredentials: true, 
+  withCredentials: true,
 });
 
 // ✅ Attach JWT token to every request if available
