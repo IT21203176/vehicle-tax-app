@@ -9,7 +9,15 @@ const connectDB = require("./config/db");
 connectDB();
 
 const app = express();
-app.use(cors());
+
+// CORS options
+const corsOptions = {
+  origin: "http://diason-vehicle-taxation.netlify.app", // allow only this frontend
+  methods: ["GET", "POST", "PUT", "DELETE"], // allowed HTTP methods
+  credentials: true, // if you need cookies
+};
+
+app.use(cors(corsOptions)); // apply CORS with options
 app.use(express.json());
 
 // Routes
