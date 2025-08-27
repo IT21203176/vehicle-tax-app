@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "vehicle-taxation-api",
   "builds": [
     {
       "src": "server.js",
@@ -16,10 +15,5 @@
       "src": "/(.*)",
       "dest": "/server.js"
     }
-  ],
-  "functions": {
-    "server.js": {
-      "maxDuration": 30
-    }
-  }
+  ]
 }
