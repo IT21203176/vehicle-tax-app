@@ -23,10 +23,12 @@ exports.protect = async (req, res, next) => {
 };
 
 // Role-based authorization
-exports.requireRole = (role) => (req, res, next) => {
-  if (!req.user || !role.includes(req.user.role))
+exports.requireRole = (roles) => (req, res, next) => {
+  const allowedRoles = Array.isArray(roles) ? roles : [roles];
+  if (!req.user || !allowedRoles.includes(req.user.role)) {
     return res
       .status(403)
       .json({ message: "Forbidden: Insufficient permissions" });
+  }
   next();
 };

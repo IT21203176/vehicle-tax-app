@@ -1,23 +1,49 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
-
-// Load env variables
-dotenv.config();
-
 const connectDB = require("./config/db");
+
+dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors());
+
+// ✅ Allow frontend on Vercel
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://vehicle-taxation.vercel.app" // <-- Replace with final domain
+];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true
+  })
+);
+
 app.use(express.json());
 
-// Routes
+// API routes
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/vehicles", require("./routes/vehicleRoutes"));
-app.use("/api/exchange", require("./routes/exchange.routes")); 
+// app.use("/api/exchange", require("./routes/exchange.routes"));
 
-require('./jobs/exchangeRates.cron');
+// Health check
+app.get("/", (req, res) => {
+  res.json({ message: "Vehicle Taxation API is running 🚀" });
+});
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+// ✅ Only start server locally
+if (process.env.NODE_ENV !== "production") {
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
+
+module.exports = app;
