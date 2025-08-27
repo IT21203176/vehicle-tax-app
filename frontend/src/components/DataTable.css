@@ -1,0 +1,760 @@
+/* DataTable.css - Fixed In-Place Editing */
+.table-wrapper {
+  overflow-x: auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-container {
+  position: relative;
+  overflow: auto;
+  max-height: 70vh;
+}
+
+.vehicles-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+  min-width: 1800px;
+  table-layout: fixed;
+}
+
+/* Fixed column widths for consistency */
+.vehicles-table th:nth-child(1), /* Grade Check */
+.vehicles-table td:nth-child(1) {
+  width: 100px;
+  min-width: 100px;
+}
+
+.vehicles-table th:nth-child(2), /* HS Code */
+.vehicles-table td:nth-child(2) {
+  width: 72px;
+  min-width: 72px;
+}
+
+.vehicles-table th:nth-child(3), /* Vehicle Type */
+.vehicles-table td:nth-child(3) {
+  width: 180px;
+  min-width: 180px;
+}
+
+.vehicles-table th:nth-child(4), /* Fuel Type */
+.vehicles-table td:nth-child(4) {
+  width: 45px;
+  min-width: 45px;
+}
+
+.vehicles-table th:nth-child(5), /* Engine CC */
+.vehicles-table td:nth-child(5) {
+  width: 50px;
+  min-width: 50px;
+}
+
+.vehicles-table th:nth-child(6), /* Total Tax */
+.vehicles-table td:nth-child(6) {
+  width: 90px;
+  min-width: 90px;
+}
+
+.vehicles-table th:nth-child(7), /* Price Value */
+.vehicles-table td:nth-child(7) {
+  width: 90px;
+  min-width: 90px;
+}
+
+.vehicles-table th:nth-child(8), /* DIP FOB */
+.vehicles-table td:nth-child(8) {
+  width: 90px;
+  min-width: 90px;
+}
+
+.vehicles-table th:nth-child(9), /* Freight */
+.vehicles-table td:nth-child(9) {
+  width: 60px;
+  min-width: 60px;
+}
+
+.vehicles-table th:nth-child(10), /* Insurance */
+.vehicles-table td:nth-child(10) {
+  width: 65px;
+  min-width: 65px;
+}
+
+.vehicles-table th:nth-child(11), /* Other */
+.vehicles-table td:nth-child(11) {
+  width: 70px;
+  min-width: 70px;
+}
+
+.vehicles-table th:nth-child(12), /* CIF JPY */
+.vehicles-table td:nth-child(12) {
+  width: 70px;
+  min-width: 70px;
+}
+
+.vehicles-table th:nth-child(13), /* CIF LKR */
+.vehicles-table td:nth-child(13) {
+  width: 60px;
+  min-width: 60px;
+}
+
+.vehicles-table th:nth-child(14), /* CM3 */
+.vehicles-table td:nth-child(14) {
+  width: 60px;
+  min-width: 60px;
+}
+
+.vehicles-table th:nth-child(15), /* General Duty */
+.vehicles-table td:nth-child(15) {
+  width: 80px;
+  min-width: 80px;
+}
+
+.vehicles-table th:nth-child(16), /* Surcharge */
+.vehicles-table td:nth-child(16) {
+  width: 80px;
+  min-width: 80px;
+}
+
+.vehicles-table th:nth-child(17), /* P Per Unit LKR */
+.vehicles-table td:nth-child(17) {
+  width: 70px;
+  min-width: 70px;
+}
+
+.vehicles-table th:nth-child(18), /* P Per CM3 LKR */
+.vehicles-table td:nth-child(18) {
+  width: 70px;
+  min-width: 70px;
+}
+
+.vehicles-table th:nth-child(19), /* PAL */
+.vehicles-table td:nth-child(19) {
+  width: 60px;
+  min-width: 60px;
+}
+
+.vehicles-table th:nth-child(20), /* SSL */
+.vehicles-table td:nth-child(20) {
+  width: 60px;
+  min-width: 60px;
+}
+
+.vehicles-table th:nth-child(21), /* VAT */
+.vehicles-table td:nth-child(21) {
+  width: 65px;
+  min-width: 65px;
+}
+
+.vehicles-table th:nth-child(22), /* Luxury Tax */
+.vehicles-table td:nth-child(22) {
+  width: 70px;
+  min-width: 70px;
+}
+
+.vehicles-table th:nth-child(23), /* Rate Currency */
+.vehicles-table td:nth-child(23) {
+  width: 60px;
+  min-width: 60px;
+}
+
+.vehicles-table th:nth-child(24), /* CIF JPY1 */
+.vehicles-table td:nth-child(24) {
+  width: 60px;
+  min-width: 60px;
+}
+
+.vehicles-table th:nth-child(25), /* CIF LKR1 */
+.vehicles-table td:nth-child(25) {
+  width: 60px;
+  min-width: 60px;
+}
+
+.vehicles-table th:nth-child(26), /* Exchange Rate */
+.vehicles-table td:nth-child(26) {
+  width: 60px;
+  min-width: 60px;
+}
+
+.vehicles-table th:nth-child(27), /* General Duty Rate */
+.vehicles-table td:nth-child(27) {
+  width: 60px;
+  min-width: 60px;
+}
+
+.vehicles-table th:nth-child(28), /* Surcharge Rate */
+.vehicles-table td:nth-child(28) {
+  width: 70px;
+  min-width: 70px;
+}
+
+.vehicles-table th:nth-child(29), /* VAT Rate */
+.vehicles-table td:nth-child(29) {
+  width: 60px;
+  min-width: 60px;
+}
+
+.vehicles-table th:nth-child(30), /* Lux Tax FD */
+.vehicles-table td:nth-child(30) {
+  width: 100px;
+  min-width: 100px;
+}
+
+.vehicles-table th:nth-child(31), /* Luxury Tax Rate Value */
+.vehicles-table td:nth-child(31) {
+  width: 120px;
+  min-width: 120px;
+}
+
+.vehicles-table th:nth-child(32), /* Luxury Tax Calculation */
+.vehicles-table td:nth-child(32) {
+  width: 120px;
+  min-width: 120px;
+}
+
+.vehicles-table th:last-child, /* Actions */
+.vehicles-table td:last-child {
+  width: 120px;
+  min-width: 120px;
+}
+
+.vehicles-table th,
+.vehicles-table td {
+  padding: 4px 4px;
+  font-size: 14px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  vertical-align: middle;
+  word-wrap: break-word;
+  overflow: hidden;
+  position: relative;
+}
+
+.vehicles-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 2px solid #dee2e6;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Default row styling */
+.vehicles-table tr:hover:not(.editing-row):not(.new-vehicle-row) {
+  background-color: #f8f9fa;
+}
+
+.vehicles-table tr:nth-child(even):not(.editing-row):not(.new-vehicle-row) {
+  background-color: #fafafa;
+}
+
+.vehicles-table tr:nth-child(even):hover:not(.editing-row):not(.new-vehicle-row) {
+  background-color: #f0f0f0;
+}
+
+/* Editing row styling - Enhanced visual feedback */
+.vehicles-table tr.editing-row {
+  background-color: #fff3cd !important;
+  border-left: 4px solid #ffc107 !important;
+  box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3) !important;
+  animation: editingPulse 2s ease-in-out infinite;
+}
+
+.vehicles-table tr.editing-row:hover {
+  background-color: #ffeaa7 !important;
+}
+
+.vehicles-table tr.editing-row td {
+  background-color: #fff3cd !important;
+  color: #856404 !important;
+  border-color: #ffc107 !important;
+}
+
+/* New vehicle row styling */
+.vehicles-table tr.new-vehicle-row {
+  background-color: #d1ecf1 !important;
+  border-left: 4px solid #17a2b8 !important;
+  animation: slideInDown 0.3s ease-out, newRowPulse 2s ease-in-out infinite;
+}
+
+.vehicles-table tr.new-vehicle-row:hover {
+  background-color: #bee5eb !important;
+}
+
+.vehicles-table tr.new-vehicle-row td {
+  background-color: #d1ecf1 !important;
+  color: #0c5460 !important;
+  border-color: #17a2b8 !important;
+}
+
+/* Multi-row vehicle styling */
+.vehicles-table tr.multi-row-vehicle {
+  border-left: 3px solid #007bff;
+}
+
+.vehicles-table tr.multi-row-vehicle:not(:last-child) {
+  border-bottom: 1px dashed #ccc;
+}
+
+/* Manufacturer Column Styling */
+.manufacturer-cell {
+  text-align: center;
+  vertical-align: middle !important;
+  position: relative;
+  padding: 5px !important;
+}
+
+.manufacturer-link {
+  display: inline-block;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.manufacturer-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.manufacturer-logo {
+  width: 25px;
+  height: auto;
+  max-height: 25px;
+  object-fit: contain;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.manufacturer-name {
+  font-size: 10px;
+  color: #333;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.unknown-manufacturer {
+  color: #888;
+  font-style: italic;
+  font-size: 10px;
+}
+
+/* Price type indicators */
+.price-type-indicator {
+  display: inline-block;
+  margin-top: 3px;
+  font-size: 9px;
+  font-weight: bold;
+  padding: 2px 4px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Actions Column Styling */
+.actions-cell {
+  text-align: center;
+  vertical-align: middle !important;
+  padding: 8px !important;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.action-buttons.editing {
+  gap: 6px;
+}
+
+.edit-btn,
+.delete-btn,
+.save-btn,
+.cancel-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  color: white !important;
+  width: 100%;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-btn {
+  background-color: #007bff;
+}
+
+.edit-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+.delete-btn {
+  background-color: #dc3545;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+}
+
+.save-btn {
+  background-color: #28a745 !important;
+}
+
+.save-btn:hover {
+  background-color: #218838 !important;
+  transform: translateY(-1px);
+}
+
+.cancel-btn {
+  background-color: #6c757d !important;
+}
+
+.cancel-btn:hover {
+  background-color: #5a6268 !important;
+  transform: translateY(-1px);
+}
+
+/* Enhanced input styling for editing */
+.edit-input {
+  width: 100% !important;
+  padding: 6px 8px !important;
+  border: 2px solid #ffc107 !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+  background-color: white !important;
+  color: #495057 !important;
+  transition: all 0.2s ease !important;
+  height: 32px !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+}
+
+.edit-input:focus {
+  outline: none !important;
+  border-color: #ffb300 !important;
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2) !important;
+  background-color: #fffef7 !important;
+}
+
+.edit-input.numeric-input {
+  text-align: right !important;
+}
+
+.edit-input::placeholder {
+  color: #6c757d !important;
+  font-style: italic !important;
+  font-size: 11px !important;
+}
+
+/* Price value editing container */
+.price-value-edit-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  min-height: 60px;
+  padding: 4px;
+}
+
+.price-type-selection {
+  margin-bottom: 8px;
+}
+
+.price-type-checkboxes {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  padding: 4px 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #495057;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.checkbox-label:hover {
+  color: #007bff;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 14px !important;
+  height: 14px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 2px solid #007bff !important;
+  cursor: pointer !important;
+  accent-color: #007bff !important;
+}
+
+.checkbox-label input[type="checkbox"]:checked {
+  background-color: #007bff !important;
+  border-color: #007bff !important;
+}
+
+.checkbox-label .checkbox-text {
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.price-input {
+  width: 100% !important;
+  padding: 6px 8px !important;
+  border: 2px solid #007bff !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+  background-color: white !important;
+  color: #495057 !important;
+  transition: all 0.2s ease !important;
+  height: 32px !important;
+  box-sizing: border-box !important;
+  text-align: right !important;
+}
+
+.price-input:focus {
+  outline: none !important;
+  border-color: #0056b3 !important;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25) !important;
+  background-color: #f8f9ff !important;
+}
+
+.price-input::placeholder {
+  color: #6c757d !important;
+  font-style: italic !important;
+  font-size: 10px !important;
+  text-align: left !important;
+}
+
+/* Input validation styles */
+.edit-input.invalid,
+.price-input.invalid {
+  border-color: #dc3545 !important;
+  background-color: #f8d7da !important;
+}
+
+.edit-input.invalid:focus,
+.price-input.invalid:focus {
+  box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.2) !important;
+}
+
+/* Animations */
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes editingPulse {
+  0%, 100% {
+    box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+  }
+  50% {
+    box-shadow: 0 2px 12px rgba(255, 193, 7, 0.5);
+  }
+}
+
+@keyframes newRowPulse {
+  0%, 100% {
+    box-shadow: 0 2px 8px rgba(23, 162, 184, 0.3);
+  }
+  50% {
+    box-shadow: 0 2px 12px rgba(23, 162, 184, 0.5);
+  }
+}
+
+/* Editing indicator */
+.editing-indicator {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 8px;
+  height: 8px;
+  background-color: #ffc107;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+}
+
+/* Disabled state for buttons */
+button:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+button:disabled:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Add vehicle button at top */
+.add-vehicle-top {
+  margin-bottom: 15px;
+  margin-left: 10px;
+  text-align: left;
+}
+
+/* Ensure text doesn't wrap in cells except where needed */
+.vehicles-table td {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Special handling for vehicle type column to allow longer text */
+.vehicles-table td:nth-child(3) {
+  white-space: normal;
+  word-wrap: break-word;
+  line-height: 1.2;
+}
+
+/* Loading state for images */
+.manufacturer-logo[src=""],
+.manufacturer-logo:not([src]) {
+  display: none;
+}
+
+/* Tooltip for manufacturer links */
+.manufacturer-link[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  background: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-top: 5px;
+  z-index: 100;
+  white-space: nowrap;
+}
+
+/* Legend styling */
+.legend {
+  color: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form validation messages */
+.validation-error {
+  color: #dc3545;
+  font-size: 11px;
+  margin-top: 2px;
+  display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .vehicles-table {
+    font-size: 12px;
+    min-width: 1200px;
+  }
+  
+  .vehicles-table th,
+  .vehicles-table td {
+    padding: 6px 4px;
+  }
+  
+  .manufacturer-logo {
+    width: 25px;
+    max-height: 25px;
+  }
+  
+  .edit-btn,
+  .delete-btn,
+  .save-btn,
+  .cancel-btn {
+    padding: 4px 6px;
+    font-size: 10px;
+  }
+
+  .edit-input,
+  .price-input {
+    padding: 3px 4px !important;
+    font-size: 10px !important;
+    height: 24px !important;
+  }
+  
+  .price-value-edit-container {
+    min-height: 50px;
+  }
+}
+
+/* Enhanced visual separation for multi-row groups */
+.vehicles-table tbody tr.multi-row-vehicle:first-child {
+  border-top: 2px solid #007bff;
+}
+
+.vehicles-table tbody tr.multi-row-vehicle:last-child {
+  border-bottom: 2px solid #007bff;
+}
+
+/* Make sure price type indicators are always visible */
+.price-type-indicator {
+  min-width: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Prevent layout shifts during editing */
+.vehicles-table {
+  table-layout: fixed !important;
+}
+
+.vehicles-table td {
+  overflow: hidden !important;
+}
+
+/* Ensure proper cell alignment during editing */
+.vehicles-table tr.editing-row td,
+.vehicles-table tr.new-vehicle-row td {
+  vertical-align: middle !important;
+}

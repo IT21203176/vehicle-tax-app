@@ -8,6 +8,11 @@ node_modules/
 .DS_Store
 Thumbs.db
 
+# Excel temporary files
+~$*.xlsx
+~$*.xls
+*.tmp
+
 # Environment variables
 .env
 
