@@ -2,14 +2,25 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    });
-    console.log('MongoDB connected');
+    console.log('Connecting to MongoDB...');
+    console.log('MONGO_URI available:', process.env.MONGO_URI ? 'Yes' : 'No');
+    
+    if (!process.env.MONGO_URI) {
+      throw new Error('MONGO_URI environment variable is not defined');
+    }
+
+    // Remove deprecated options
+    await mongoose.connect(process.env.MONGO_URI);
+    
+    console.log('MongoDB connected successfully');
+    console.log('Database name:', mongoose.connection.name);
   } catch (err) {
-    console.error(err.message);
-    process.exit(1);
+    console.error('MongoDB connection error:', err.message);
+    console.error('Full error:', err);
+    // Don't exit in production/Vercel environment
+    if (process.env.NODE_ENV !== 'production') {
+      process.exit(1);
+    }
   }
 };
 
