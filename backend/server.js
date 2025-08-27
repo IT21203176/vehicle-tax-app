@@ -19,5 +19,4 @@ app.use("/api/exchange", require("./routes/exchange.routes"));
 
 require('./jobs/exchangeRates.cron');
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+module.exports = app;
