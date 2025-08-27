@@ -16,6 +16,12 @@ app.use(express.json());
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/vehicles", require("./routes/vehicleRoutes"));
 app.use("/api/exchange", require("./routes/exchange.routes")); 
+app.get('/', (req, res) => {
+    res.send({
+        activeStatus: true,
+        error: false,
+    })
+})
 
 require('./jobs/exchangeRates.cron');
 
