@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create axios instance
 const api = axios.create({
-  baseURL: "https://vehicle-tax-app-btfo.vercel.app/api",
+  baseURL: "https://dvt-app-ebon.vercel.app/api",
   headers: {
     "Content-Type": "application/json",
   },
