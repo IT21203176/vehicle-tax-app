@@ -16,7 +16,7 @@ const app = express();
 // Middlewares
 app.use(bodyParser.json())
 app.use(cors({
-    origin: 'http://localhost:5173/'
+    origin: 'http://localhost:5173'
 }));
 app.use(express.json());
 
