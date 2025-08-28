@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser")
 const cors = require("cors");
-const dotenv = require("dotenv");
+const serverless = require("serverless-http")
 const path = require("path");
 
 // Load env variables
@@ -33,12 +33,6 @@ app.use("/api/vehicles", require("./routes/vehicleRoutes"));
 // ============================
 // Serve Frontend Static Files
 // ============================
-const frontendPath = path.join(__dirname, "frontend", "dist");
-app.use(express.static(frontendPath));
 
-
-// ============================
-// Start Server
-// ============================
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+module.exports = app
+module.exports.handler = serverless(app)
