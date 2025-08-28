@@ -1,4 +1,5 @@
 const express = require("express");
+const bodyParser = require("body-parser")
 const cors = require("cors");
 const dotenv = require("dotenv");
 const path = require("path");
@@ -13,7 +14,10 @@ connectDB();
 const app = express();
 
 // Middlewares
-app.use(cors());
+app.use(bodyParser.json())
+app.use(cors({
+    origin: 'http://localhost:5173/'
+}));
 app.use(express.json());
 
 // ============================
