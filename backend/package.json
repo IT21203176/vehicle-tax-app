@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "build": "echo 'Build complete'",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "install-client": "cd frontend && npm install",
+    "build-client": "cd frontend && npm run build",
+    "postinstall": "npm run install-client && npm run build-client"
   },
   "keywords": [],
   "author": "",
